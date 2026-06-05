@@ -67,7 +67,7 @@
         /* Image Slideshow Container */
         .slideshow-container {
             width: 100%;
-            height: 380px;
+            height: 350px;
             border-radius: 22px;
             overflow: hidden;
             margin-bottom: 20px;
@@ -101,7 +101,7 @@
 
         h1 {
             color: #ff4d6d;
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             margin: 5px 0;
             font-weight: 700;
             font-family: 'Noto Sans Sinhala', sans-serif;
@@ -113,6 +113,24 @@
             font-weight: 400;
             margin: 0 0 20px 0;
             font-family: 'Noto Sans Sinhala', sans-serif;
+        }
+
+        /* Girlfriend's Beautiful Single Photo - Inserted Perfectly */
+        .single-img-container {
+            width: 100%;
+            height: 380px;
+            border-radius: 22px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 4px solid #fff;
+        }
+
+        .single-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
         }
 
         .message-box {
@@ -161,7 +179,7 @@
     <div class="wrapper">
         <div class="card">
             <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
-                🎵 මෙතන ඔබන්නකො 😌
+                🎵 උපන්දින සින්දුව ප්ලේ කරන්න
             </button>
 
             <div class="slideshow-container">
@@ -182,11 +200,15 @@
             <h1>සුභ උපන්දිනයක් මගේ මැණිකට!</h1>
             <h2>හදවතින්ම සුභ පතනවා රත්තරන් ❤️</h2>
 
-            <div class="message-box">
-                මගේ ජීවිතයට ආපු ලස්සනම වගේම වාසනාවන්තම ආශිර්වාදය ඔයා. ඔයා මගේ ළඟින් ඉන්න හැම තත්පරයක්ම මට හරිම විශේෂයි. ලැබුවා වූ 26 වෙනි උපන්දිනය ඔයාගේ හැම හීනයක්ම සැබෑ වෙන, ආදරයෙන් සහ සතුටෙන් පිරුණු ලස්සනම ලස්සන වසරක් වෙන්න කියලා මම මුළු හදවතින්ම ප්‍රාර්ථනා කරනවා! හැමදාම ආදරෙයි මගේ මැණික. ❤️
+            <div class="single-img-container">
+                <img src="girlfriend.png.jpg" alt="උපන්දින කුමරිය">
             </div>
 
-            <div class="footer-love">හැමදාටම මම ඔයත් එක්ක ඉන්නව රත්තරන්... 💖</div>
+            <div class="message-box">
+                මගේ ජීවිතයට ආපු ලස්සනම වගේම වාසනාවන්තම ආශිර්වාදය ඔයා. ඔයා මගේ ළඟින් ඉන්න හැම තත්පරයක්ම මට හරිම විශේෂයි. ලැබුවා වූ 26 වෙනි උපන්දිනය ඔයාගේ හැම හීනයක්ම සැබෑ වෙන, ආදරයෙන් සහ සතුටෙන් පිරුණු ලස්සනම ලස්සන වසරක් වෙන්න කියලා මම මුළු හදවතින්ම ප්‍රාර්ථනා කරනවා! ආදරෙයි මගේ මැණික. ❤️
+            </div>
+
+            <div class="footer-love">හැමදාම ආදරේ මගෙ සුද්දිට විතරයි... 💖</div>
         </div>
     </div>
 
@@ -214,11 +236,11 @@
         function toggleMusic() {
             if (music.paused) {
                 music.play().catch(e => console.log("Audio play blocked by browser setup"));
-                btn.innerHTML = "⏸️ සින්දුව නවත්වන්න";
+                btn.innerHTML = "⏸️ pause";
                 btn.style.background = "#7a7a7a";
             } else {
                 music.pause();
-                btn.innerHTML = "🎵 උපන්දින සින්දුව ප්ලේ කරන්න";
+                btn.innerHTML = "🎵 මේක ඔබන්නකො 😎";
                 btn.style.background = "#ff4d6d";
             }
         }
@@ -233,6 +255,7 @@
             heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
             document.body.appendChild(heart);
         }
+
     </script>
 </body>
 </html>
