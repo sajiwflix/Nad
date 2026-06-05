@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 26th Birthday My Queen! 👸❤️</title>
+    <title>සුභ උපන්දිනයක් මගේ රත්තරන්! ❤️</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Signika+Negative:wght@600;700&display=swap');
         
         * {
             box-sizing: border-box;
@@ -19,12 +19,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
             color: #4a4a4a;
             overflow-x: hidden;
         }
 
-        /* Mobile Responsive Main Container */
         .wrapper {
             width: 100%;
             max-width: 420px;
@@ -34,7 +33,7 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.93);
             backdrop-filter: blur(10px);
             padding: 25px 20px;
             border-radius: 30px;
@@ -46,119 +45,103 @@
             z-index: 2;
         }
 
-        /* Music Play Button overlay for modern browser safety */
+        /* Music Button */
         .music-btn {
             background: #ff4d6d;
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
             cursor: pointer;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            transition: 0.3s;
         }
 
-        /* Image Styling - Tailored perfectly for the uploaded dress photo */
-        .img-container {
+        /* Image Slideshow Container */
+        .slideshow-container {
             width: 100%;
-            height: 280px;
-            border-radius: 20px;
+            height: 380px;
+            border-radius: 22px;
             overflow: hidden;
             margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             border: 4px solid #fff;
+            position: relative;
         }
 
-        .img-container img {
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySlides img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 20%;
+            object-position: center center;
+        }
+
+        /* Fade Animation for Slideshow */
+        .fade {
+            animation: fadeAnim 1.5s ease-in-out;
+        }
+
+        @keyframes fadeAnim {
+            from { opacity: 0.4 } 
+            to { opacity: 1 }
         }
 
         h1 {
             color: #ff4d6d;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin: 5px 0;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            font-family: 'Noto Sans Sinhala', sans-serif;
         }
 
         h2 {
             color: #ff758f;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 400;
             margin: 0 0 20px 0;
-        }
-
-        /* Live Counter Styling */
-        .counter-title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: #c9184a;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .timer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .timer-box {
-            background: #fff0f3;
-            border: 1px solid #ffccd5;
-            padding: 10px 5px;
-            border-radius: 12px;
-            box-shadow: inset 0 2px 5px rgba(255,77,109,0.05);
-        }
-
-        .time-val {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ff4d6d;
-            display: block;
-        }
-
-        .time-label {
-            font-size: 0.7rem;
-            color: #7a7a7a;
+            font-family: 'Noto Sans Sinhala', sans-serif;
         }
 
         .message-box {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #4a4a4a;
             margin: 20px 0;
-            padding: 10px 15px;
-            font-style: italic;
-            border-left: 3px solid #ff4d6d;
-            background: rgba(255, 240, 243, 0.5);
+            padding: 12px 15px;
+            font-style: normal;
+            border-left: 4px solid #ff4d6d;
+            background: rgba(255, 240, 243, 0.7);
             border-radius: 0 15px 15px 0;
-            text-align: left;
+            text-align: justify;
+            font-family: 'Noto Sans Sinhala', sans-serif;
         }
 
         .footer-love {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #ff4d6d;
-            font-weight: 600;
+            font-weight: 700;
             margin-top: 15px;
+            font-family: 'Noto Sans Sinhala', sans-serif;
         }
 
-        /* Falling Heart Decorations */
+        /* Falling Hearts */
         .heart {
             position: absolute;
             color: #ff758f;
             font-size: 1rem;
-            position: absolute;
             animation: fall 4s linear infinite;
             top: -20px;
             z-index: 1;
@@ -178,83 +161,69 @@
     <div class="wrapper">
         <div class="card">
             <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
-                🎵 Play Birthday Music
+                🎵 මෙතන ඔබන්නකො 😌
             </button>
 
-            <div class="img-container">
-                <img src="girlfriend.png.jpg" alt="Birthday Queen">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="couple1.heic" alt="ආදරණීය මතකයන් 1">
+                </div>
+                <div class="mySlides fade">
+                    <img src="couple2.heic" alt="ආදරණීය මතකයන් 2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="couple3.heic" alt="ආදරණීය මතකයන් 3">
+                </div>
+                <div class="mySlides fade">
+                    <img src="couple4.heic" alt="ආදරණීය මතකයන් 4">
+                </div>
             </div>
 
-            <h1>Happy 26th Birthday!</h1>
-            <h2>My Beautiful Queen 👸❤️</h2>
-
-            <div class="counter-title">You have blessed this world for:</div>
-            
-            <div class="timer-grid">
-                <div class="timer-box"><span class="time-val" id="years">00</span><span class="time-label">Years</span></div>
-                <div class="timer-box"><span class="time-val" id="months">00</span><span class="time-label">Months</span></div>
-                <div class="timer-box"><span class="time-val" id="days">00</span><span class="time-label">Days</span></div>
-                <div class="timer-box"><span class="time-val" id="hours">00</span><span class="time-label">Hours</span></div>
-                <div class="timer-box"><span class="time-val" id="minutes">00</span><span class="time-label">Minutes</span></div>
-                <div class="timer-box"><span class="time-val" id="seconds">00</span><span class="time-label">Seconds</span></div>
-            </div>
+            <h1>සුභ උපන්දිනයක් මගේ මැණිකට!</h1>
+            <h2>හදවතින්ම සුභ පතනවා රත්තරන් ❤️</h2>
 
             <div class="message-box">
-                "Wishing you the happiest birthday ever! You look absolutely stunning today and always. I am so incredibly lucky to have you in my life. May your 26th year bring you endless joy and love! ❤️"
+                මගේ ජීවිතයට ආපු ලස්සනම වගේම වාසනාවන්තම ආශිර්වාදය ඔයා. ඔයා මගේ ළඟින් ඉන්න හැම තත්පරයක්ම මට හරිම විශේෂයි. ලැබුවා වූ 26 වෙනි උපන්දිනය ඔයාගේ හැම හීනයක්ම සැබෑ වෙන, ආදරයෙන් සහ සතුටෙන් පිරුණු ලස්සනම ලස්සන වසරක් වෙන්න කියලා මම මුළු හදවතින්ම ප්‍රාර්ථනා කරනවා! හැමදාම ආදරෙයි මගේ මැණික. ❤️
             </div>
 
-            <div class="footer-love">With All My Love, Forever 💖</div>
+            <div class="footer-love">හැමදාටම මම ඔයත් එක්ක ඉන්නව රත්තරන්... 💖</div>
         </div>
     </div>
 
     <script>
-        // Age Tracker Logic
-        const birthDate = new Date("2000-06-06T00:00:00");
+        // Automatic Slideshow Logic
+        let slideIndex = 0;
+        showSlides();
 
-        function updateAgeTracker() {
-            const now = new Date();
-            let years = now.getFullYear() - birthDate.getFullYear();
-            let months = now.getMonth() - birthDate.getMonth();
-            let days = now.getDate() - birthDate.getDate();
-            
-            if (days < 0) {
-                months--;
-                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-                days += prevMonth.getDate();
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
             }
-            if (months < 0) {
-                years--;
-                months += 12;
-            }
-
-            document.getElementById("years").innerText = years;
-            document.getElementById("months").innerText = months;
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = String(now.getHours()).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(now.getSeconds()).padStart(2, '0');
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); 
         }
 
-        setInterval(updateAgeTracker, 1000);
-        updateAgeTracker();
-
-        // Music Trigger (Safe for Mobile Browsers)
+        // Music Play/Pause Logic
         const music = document.getElementById("bgMusic");
         const btn = document.getElementById("musicBtn");
 
         function toggleMusic() {
             if (music.paused) {
-                music.play().catch(e => console.log("Playback interaction trigger"));
-                btn.innerHTML = "⏸️ Pause Music";
+                music.play().catch(e => console.log("Audio play blocked by browser setup"));
+                btn.innerHTML = "⏸️ සින්දුව නවත්වන්න";
                 btn.style.background = "#7a7a7a";
             } else {
                 music.pause();
-                btn.innerHTML = "🎵 Play Birthday Music";
+                btn.innerHTML = "🎵 උපන්දින සින්දුව ප්ලේ කරන්න";
                 btn.style.background = "#ff4d6d";
             }
         }
 
-        // Falling Hearts Effect
+        // Falling Flowers/Hearts Decoration
         for(let i=0; i<15; i++) {
             let heart = document.createElement('div');
             heart.className = 'heart';
