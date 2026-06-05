@@ -246,15 +246,67 @@
         }
 
         // Falling Flowers/Hearts Decoration
-        for(let i=0; i<15; i++) {
-            let heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerText = ['❤️', '💖', '✨', '🌸'][Math.floor(Math.random()*4)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDelay = Math.random() * 5 + 's';
-            heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
-            document.body.appendChild(heart);
-        }
+        // --- සැමරුම් බැලූන්ස් සහ ඉෆෙක්ට්ස් (Celebrating Balloons Effect) ---
+
+// 1. උඩට පාවෙන බැලූන්ස් (Floating Balloons)
+function createBalloon() {
+    const balloon = document.createElement('div');
+    balloon.innerText = ['🎈', '💖', '🎉', '✨'][Math.floor(Math.random() * 4)];
+    balloon.style.position = 'absolute';
+    balloon.style.bottom = '-50px'; // තිරයේ පතුලෙන්ම පටන් ගනී
+    balloon.style.left = Math.random() * 100 + 'vw';
+    balloon.style.fontSize = (Math.random() * 20 + 20) + 'px'; // බැලූන්ස් විවිධ ප්‍රමාණවලින් හැදේ
+    balloon.style.zIndex = '1';
+    
+    // බැලූන් උඩට යාමේ වේගය (තත්පර 4ත් 7ත් අතර)
+    const duration = Math.random() * 3 + 4;
+    balloon.style.transition = `transform ${duration}s linear, opacity ${duration}s linear`;
+    
+    document.body.appendChild(balloon);
+
+    // සුළු මොහොතකින් බැලූනය උඩට යැවීම
+    setTimeout(() => {
+        balloon.style.transform = `translateY(-110vh) translateX(${Math.random() * 50 - 25}px)`;
+        balloon.style.opacity = '0';
+    }, 100);
+
+    // උඩට ගිය පසු බැලූනය ඉවත් කිරීම
+    setTimeout(() => {
+        balloon.remove();
+    }, duration * 1000);
+}
+
+// තත්පර භාගයෙන් භාගයට (ms 500) අලුත් බැලූනයක් බැගින් සෑදීම
+setInterval(createBalloon, 500);
+
+
+// 2. උඩ ඉඳන් පහළට වැටෙන සැමරුම් කඩදාසි (Falling Confetti)
+function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.innerText = ['🌸', '✨', '🎂', '🥳', '❤️'][Math.floor(Math.random() * 5)];
+    confetti.style.position = 'absolute';
+    confetti.style.top = '-20px';
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.fontSize = (Math.random() * 10 + 15) + 'px';
+    confetti.style.zIndex = '1';
+    
+    const duration = Math.random() * 3 + 3;
+    confetti.style.transition = `transform ${duration}s linear`;
+    
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+        confetti.style.transform = `translateY(105vh) rotate(${Math.random() * 360}deg)`;
+    }, 100);
+
+    setTimeout(() => {
+        confetti.remove();
+    }, duration * 1000);
+}
+
+// තත්පරයෙන් තත්පරයට වැටෙන ඉෆෙක්ට් එකක් සෑදීම
+setInterval(createConfetti, 800);
+
 
     </script>
 </body>
